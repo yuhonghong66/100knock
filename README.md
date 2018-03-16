@@ -34,7 +34,8 @@ $ cd <yyyy>/<name>
 みなさんはローカルリポジトリの `100knock/<yyyy>/<name>` で自由に作業をしてください．章ごとにディレクトリを分け，問題番号をファイル名に明記することを推奨します．
 
 ## 100本ノックの進め方
-1. メンター側で `<name>-<chapter number>-<question numbet>` という名前の issue を立てておきます．
+1. メンター側で `<name>-<chapter number>` という名前の issue を立てておきます．issue の説明文は問題番号が箇条書きになっています．
+チェックボックスになっているので，好きに使ってください．
 2. リモートリポジトリの `Issues` から該当の issue を開いて，`Assignees` を自分にします．
 最初は `Assignees` がメンターになっています．ここのcheckを外して，自分にcheckを入れてください．
 3. ローカルリポジトリで， `<name>-<chapter number>-<question number>`branch を作成し checkout してください．
