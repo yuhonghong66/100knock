@@ -38,7 +38,7 @@ $ cd <yyyy>/<name>
 チェックボックスになっているので，好きに使ってください．
 2. リモートリポジトリの `Issues` から該当の issue を開いて，`Assignees` を自分にします．
 最初は `Assignees` がメンターになっています．ここのcheckを外して，自分にcheckを入れてください．
-3. ローカルリポジトリで， `<name>-<chapter number>-<question number>`branch を作成し checkout してください．
+3. ローカルリポジトリで， `<name>-<chapter number>-<question number>` branch を作成し checkout してください．
 4. 問題をといてください．何かあれば，リモートリポジトリの issue ページで @<mentor name> をつけてコメントしてください．
 5. 問題が解けたら，そのファイルをステージングしてください．`$ git add <file>` 
  で行えます．ただし，データは add しないでください．git は大きなデータを管理するようには設計されておらず，めちゃくちゃ動作が重くなります． 
