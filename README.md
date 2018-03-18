@@ -5,13 +5,13 @@
 
 ## getting start
    ```
-$ git clone https://github.com/OnizukaLab/100knock.git
+$ git clone -b <yyyy> https://github.com/OnizukaLab/100knock.git
 $ cd 100knock/
 $ git config user.name <user name>
 $ git config user.email <user address>
 $ git config --list
-$ git branch <name>-2018
-$ git checkout <name>-2018
+$ git branch <name>
+$ git checkout <name>
 $ git branch
 $ cd <yyyy>/<name>
 ```
