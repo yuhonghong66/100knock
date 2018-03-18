@@ -49,7 +49,7 @@ $ cd <yyyy>/<name>
 8. `$ git log` で過去のコミットが新しい順で表示されます．最新のコミットがさっきのになっていたら ok です．
 9. `$ git push origin <name>-<chapter number>-<question number>` でコミットがリモートリポジトリに反映されます．
 10. リモートリポジトリの `Pull requests` を開いて `New pull request` を押してください．プルリク作成画面が表示されますので，
-`base:<yyyy>`， `compare:<name>-<chapter number>-<question numbet>` を選択し変更が正しいことを確認して
+`base:<yyyy>`， `compare:<name>-<chapter number>-<question number>` を選択し変更が正しいことを確認して
  `Create pull request` を押してください．
 11. プルリクのタイトル，説明文を書いて，`Assignees` を自分に，`Reviewer` をメンターに設定してください．
 説明文には@<mentor name>をつけて，issue 番号を明記すると良いでしょう．
@@ -63,8 +63,14 @@ $ git checkout <yyyy>
 $ git pull origin <yyyy>
 ```
 ディレクトリ構成などをみて，正しく反映されていることを確かめてください．
+
 15. 不要になった `<name>-<chapter number>-<question number>` ブランチを削除します．
-`$ git branch --delete <name>-<chapter number>-<question number>` でできます．
+```
+$ git branch --delete <name>-<chapter number>-<question number>
+$ git push origin :<name>-<chapter number>-<question number>
+
+```
+前者はローカルリポジトリのブランチ削除，後者はリモートリポジトリのブランチ削除です．
 
 
 
