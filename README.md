@@ -68,7 +68,6 @@ $ git pull origin <yyyy>
 ```
 $ git branch --delete <name>-<chapter number>-<question number>
 $ git push origin :<name>-<chapter number>-<question number>
-
 ```
 前者はローカルリポジトリのブランチ削除，後者はリモートリポジトリのブランチ削除です．
 
