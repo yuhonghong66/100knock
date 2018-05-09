@@ -7,4 +7,4 @@ def ngram(tlist, n):
 
 str = "I am an NLPer"
 print(ngram(str.split(" "), 2))
-print(ngram(list(str), 2))
+print(ngram(str, 2))
