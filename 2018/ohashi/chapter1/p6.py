@@ -1,5 +1,4 @@
-def n_gram(text, n):
-    return [' '.join(text[i:i+n]) for i in range(len(text) - n + 1)]
+from p5 import n_gram
 
 a = [x for x in 'paraparaparadise']
 b = [x for x in 'paragraph']
