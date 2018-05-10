@@ -8,6 +8,6 @@ if __name__ == '__main__':
 	print('X&Y : {}'.format(X&Y))
 	print('X-Y : {}'.format(X-Y))
 	print('Y-X : {}'.format(Y-X))
-	print('\'se\' in X : {}'.format('se' in X))
-	print('\'se\' in Y : {}'.format('se' in Y))
+	print("'se' in X : {}".format('se' in X))
+	print("'se' in Y : {}".format('se' in Y))
 	
