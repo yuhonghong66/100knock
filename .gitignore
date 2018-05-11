@@ -1,4 +1,7 @@
 .idea
 __pycache__/
+2018/data/
+!2018/data/.gitkeep
 
 2018/tanaka/data/
+!2018/tanaka/data/.gitkeep
