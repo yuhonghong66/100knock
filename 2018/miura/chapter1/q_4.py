@@ -5,5 +5,3 @@ for i,word in enumerate(s.split(" ")):
 	n = 1 if (i+1) in one else 2
 	element_dict[word[:n]] = (i+1)
 print(element_dict)
-
-# Mg -> Miは文章的に仕方がない？
