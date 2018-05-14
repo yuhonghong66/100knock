@@ -8,5 +8,6 @@ for line in extract('イギリス').split('\n'):
         word = re.split(' = ', s)
         basic_dict[word[0]] = word[1]
 
-for k,v in basic_dict.items():
-    print(k + ' : ' + v)
+if __name__ == '__main__':
+    for k,v in basic_dict.items():
+        print(k + ' : ' + v)
