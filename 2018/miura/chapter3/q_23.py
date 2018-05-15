@@ -1,7 +1,12 @@
-import re
 from q_20 import extract
+import re
 
 for line in extract('イギリス').split('\n'):
-	if re.match('^==', line):
-		print(line.strip('='), line.count('=')//2)
-
+	m = re.match('^(==+).*?(==+)$', line)
+	if m:
+		print(line)
+		f = len(m.group(1))
+		l = len(m.group(2))
+		#print(line.strip('='), max(len(m.group(1)),len(m.group(2))))
+		print(f,l)
+		print(line.strip('='), max(f,l))
