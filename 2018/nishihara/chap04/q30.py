@@ -1,7 +1,7 @@
 # coding: UTF-8
 # 
 # 形態素解析
-# $ mecab -F"%m,%f[6],%f[1],%f[2]\n" neko.txt > neko.txt.mecab
+# $ mecab -F"%m,%f[6],%f[0],%f[1]\n" neko.txt > neko.txt.mecab
 
 
 def readma(path):
