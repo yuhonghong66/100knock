@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 import q30
 
 mor = q30.readma("../../../data/neko.txt.mecab")
