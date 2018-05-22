@@ -9,7 +9,7 @@ def read_data():
             if line_.find('EOS') == -1 and line_ != '':
                 affix = re.split('\s|\t|,', line_.replace('EOS\n', ''))
                 tmp.append({'surface': affix[0],
-                             'base'   : affix[-3],
+                             'base'   : affix[-4],
                              'pos'    : affix[1],
                              'pos2'   : affix[2]})
             else:
