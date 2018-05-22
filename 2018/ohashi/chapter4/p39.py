@@ -12,7 +12,7 @@ count = [x[1] for x in list(Counter(words).most_common())]
 hist = list(Counter(count).most_common())
 
 
-pl.bar([np.log(x) for x in range(1, len(hist)+1)], [np.log(x[1]) for x in hist])
+pl.scatter([np.log(x) for x in range(1, len(hist)+1)], [np.log(x[1]) for x in hist])
 
 
 pl.show()
