@@ -21,17 +21,26 @@ def readXML(path):
     return ET.fromstring("<root>{}.</root>".format(XmlData))
 
 
+def getbpp(mecabstr):
+    s = mecabstr.split(",")
+    return (s[6], s[0], s[1])
+
+
 if __name__ == '__main__':
-    root = readXML("../../../data/neko.txt.cabocha")
-    rst = []
-    for s in root:
-        sentence = []
-        for c in s:
-            for t in c:
-                a = t.get("feature").split(",")
-                sentence.append(Morph(t.text, a[6], a[0], a[1]))
-        rst.append(sentence)
+    print("\n".join([str(t) for t in [[Morph(t.text, *getbpp(t.get("feature"))) for c in s for t in c] for s in readXML("../../../data/neko.txt.cabocha")][2]]))
 
-    for t in rst[2]:
-        print(t)
 
+    # 下記と等価
+    #
+    # root = readXML("../../../data/neko.txt.cabocha")
+    # rst = []
+    # for s in root:
+    #     sentence = []
+    #     for c in s:
+    #         for t in c:
+    #             a = t.get("feature").split(",")
+    #             sentence.append(Morph(t.text, a[6], a[0], a[1]))
+    #     rst.append(sentence)
+    #
+    # for t in rst[2]:
+    #     print(t)
