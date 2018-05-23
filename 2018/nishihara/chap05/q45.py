@@ -4,7 +4,7 @@ from collections import defaultdict
 if __name__ == '__main__':
     rst = getChunks("../../../data/neko.txt.cabocha")
 
-    for s in rst[:8]:
+    for s in rst:
         for c in s:
             v = ""
             p = []
@@ -20,4 +20,4 @@ if __name__ == '__main__':
                         p.append(m.base)
             if(len(p) > 0):
                 p.sort()
-                print(v + "\t" + "\t".join(p))
+                print(v + "\t" + " ".join(p))
