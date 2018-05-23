@@ -1,5 +1,3 @@
-# coding: UTF-8
-
 import q30
 
 mor = q30.readma("../../../data/neko.txt.mecab")
@@ -10,6 +8,6 @@ for s in mor:
         if(m["pos"] == "名詞"):
             rst.append(m["surface"])
         else:
-            if(len(rst) > 0):
+            if(len(rst) > 1):
                 print("".join(rst))
             rst = []

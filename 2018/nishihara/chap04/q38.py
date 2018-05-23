@@ -1,20 +1,24 @@
 # coding: UTF-8
-from matplotlib import pyplot
-import q30
 
-mor = q30.readma("../../../data/neko.txt.mecab")
-wdict = {}
-hdict = {}
+from collections import defaultdict
+from matplotlib import pyplot as plt
+import q30, q36
 
-for s in mor:
-    for m in s:
-        w = (m["base"], m["pos"])
-        wdict[w] = wdict[w] + 1 if w in wdict else 1
+def q38():
+    hdict = defaultdict(int)
 
-for v in wdict.values():
-    hdict[v] = hdict[v] + 1 if v in hdict else 1
+    mor = q30.readma("../../../data/neko.txt.mecab")
+    wdict = q36.mor2wdict(mor)
 
-rst = sorted(hdict.items(), key=lambda x: -x[1])
+    for v in wdict.values():
+        hdict[v] += 1
 
-pyplot.bar([t[0] for t in rst], [t[1] for t in rst], align="center")
-pyplot.show()
+    return sorted(hdict.items(), key=lambda x: -x[1])
+
+
+if __name__ == '__main__':
+    rst = q38()
+    plt.bar([t[0] for t in rst], [t[1] for t in rst], align="center")
+    plt.xlabel("出現頻度")
+    plt.ylabel("出現頻度をとる単語の種類数")
+    plt.show()

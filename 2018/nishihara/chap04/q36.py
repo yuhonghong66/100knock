@@ -1,15 +1,17 @@
-# coding: UTF-8
-
+from collections import defaultdict
 import q30
 
-mor = q30.readma("../../../data/neko.txt.mecab")
-wdict = {}
+def mor2wdict(mor):
+    wdict = defaultdict(int)
+    for s in mor:
+        for m in s:
+            wdict[(m["base"], m["pos"])] += 1
+    return wdict
 
-for s in mor:
-    for m in s:
-        w = (m["base"], m["pos"])
-        wdict[w] = wdict[w] + 1 if w in wdict else 1
+if __name__ == '__main__':
+    mor = q30.readma("../../../data/neko.txt.mecab")
+    wdict = mor2wdict(mor)
 
-rst = sorted(wdict.items(), key=lambda x: -x[1])
-for t in rst:
-    print(t[1], t[0][0])
+    rst = sorted(wdict.items(), key=lambda x: -x[1])
+    for t in rst:
+        print(t[1], t[0][0])
