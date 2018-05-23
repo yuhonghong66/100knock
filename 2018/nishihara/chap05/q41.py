@@ -2,6 +2,7 @@
 # cabocha -f3 neko.txt -o neko.txt.cabocha
 
 import xml.etree.ElementTree as ET
+import re
 from q40 import Morph
 import q40
 
@@ -17,6 +18,9 @@ class Chunk:
         return "{},{}: ".format(self.dst, self.srcs) + \
                ", ".join([str(s) for s in self.morphs])
 
+    # 文節の表層形を取得(句読点は消す)
+    def get_surface(self):
+        return "".join([re.sub("[。、,.]", "", m.surface) for m in self.morphs])
 
 def getChunks(path):
     root = q40.readXML(path)
