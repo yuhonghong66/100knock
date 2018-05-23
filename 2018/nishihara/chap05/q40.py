@@ -27,6 +27,6 @@ with open("../../../data/neko.txt.cabocha") as f:
                 sentence.append(Morph(t.text, a[6], a[0], a[1]))
         rst.append(sentence)
 
-    for t in rst[3]:
+    for t in rst[2]:
         print(t)
 
