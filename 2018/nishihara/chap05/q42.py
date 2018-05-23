@@ -1,6 +1,4 @@
-from q40 import Morph
-from q41 import Chunk, getChunks
-
+from q41 import getChunks
 
 if __name__ == '__main__':
     rst = getChunks("../../../data/neko.txt.cabocha")
