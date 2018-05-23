@@ -2,20 +2,8 @@
 # cabocha -f3 neko.txt -o neko.txt.cabocha
 
 import xml.etree.ElementTree as ET
+from q40 import Morph
 import q40
-
-class Morph:
-    """形態素を表すクラス"""
-    def __init__(self, surface, base, pos, pos1):
-        self.surface = surface
-        self.base = base
-        self.pos = pos
-        self.pos1 = pos1
-
-    # (surface,base,pos,pos1)
-    def __str__(self):
-        return "(" + ",".join([self.surface, self.base, self.pos, self.pos1]) + ")"
-
 
 class Chunk:
     """文節を表すクラス"""
@@ -30,8 +18,8 @@ class Chunk:
                ", ".join([str(s) for s in self.morphs])
 
 
-if __name__ == '__main__':
-    root = q40.readXML("../../../data/neko.txt.cabocha")
+def getChunks(path):
+    root = q40.readXML(path)
     rst = []
     for s in root:
         sentence = []
@@ -45,6 +33,11 @@ if __name__ == '__main__':
             if chunk.dst != -1:
                 sentence[chunk.dst].srcs.append(i)
         rst.append(sentence)
+    return rst
+
+
+if __name__ == '__main__':
+    rst = getChunks("../../../data/neko.txt.cabocha")
 
     for i,t in enumerate(rst[7]):
         print(i,t)
