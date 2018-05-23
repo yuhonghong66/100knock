@@ -1,5 +1,5 @@
 if __name__ == '__main__':
-    with open('../data/hightemp.txt', 'r') as f:
+    with open('../../../data/hightemp.txt', 'r') as f:
         col_dict = {}
         data = f.read().split('\n')
         data.remove('')

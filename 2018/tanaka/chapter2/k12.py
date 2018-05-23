@@ -1,7 +1,7 @@
 if __name__ == '__main__':
-    f = open('../data/hightemp.txt','r')
-    f1 = open('../data/col1.txt','w')
-    f2 = open('../data/col2.txt', 'w')
+    f = open('../../../data/hightemp.txt','r')
+    f1 = open('../../../data/col1.txt','w')
+    f2 = open('../../../data/col2.txt', 'w')
 
     data = f.read().split('\n')
     data.remove('')

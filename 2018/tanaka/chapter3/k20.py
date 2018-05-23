@@ -3,7 +3,7 @@
 import json
 
 def extract_json():
-    with open('../data/jawiki-country.json','r') as f:
+    with open('../../../data/jawiki-country.json','r') as f:
         data = f.read().split('\n')
         data.remove('')
         for line in data:
