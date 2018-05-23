@@ -11,8 +11,9 @@ class Morph:
         self.pos = pos
         self.pos1 = pos1
 
+    # (surface,base,pos,pos1)
     def __str__(self):
-        return ",".join([self.surface, self.base, self.pos, self.pos1])
+        return "(" + ",".join([self.surface, self.base, self.pos, self.pos1]) + ")"
 
 
 def readXML(path):
