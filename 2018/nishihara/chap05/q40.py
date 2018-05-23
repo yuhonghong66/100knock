@@ -15,9 +15,14 @@ class Morph:
         return ",".join([self.surface, self.base, self.pos, self.pos1])
 
 
-with open("../../../data/neko.txt.cabocha") as f:
-    XmlData = f.read()
-    root = ET.fromstring("<root>{}.</root>".format(XmlData))
+def readXML(path):
+    with open(path) as f:
+        XmlData = f.read()
+    return ET.fromstring("<root>{}.</root>".format(XmlData))
+
+
+if __name__ == '__main__':
+    root = readXML("../../../data/neko.txt.cabocha")
     rst = []
     for s in root:
         sentence = []
