@@ -6,5 +6,5 @@ import matplotlib as mpl
 mpl.rcParams['font.family'] = 'AppleGothic'
 
 l = [list(x) for x in zip(*counter.most_common(1000))]
-plt.bar(range(1000), l[1], align='center', log=True)
+plt.loglog(range(1000), l[1])
 plt.show()
