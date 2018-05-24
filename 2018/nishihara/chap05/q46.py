@@ -8,7 +8,6 @@ if __name__ == '__main__':
         for c in s:
             v = ""
             p = []
-            ps = []
             for m in c.morphs:
                 if(m.pos == "動詞"):
                     v = m.base
@@ -18,8 +17,9 @@ if __name__ == '__main__':
             for src in c.srcs:
                 for m in s[src].morphs:
                     if m.pos == "助詞":
-                        p.append(m.base)
-                        ps.append(s[src].get_surface())
+                        p.append((m.base, s[src].get_surface()))
             if(len(p) > 0):
                 p.sort()
-                print("{}\t{}\t{}".format(v, " ".join(p), " ".join(ps)))
+                par = [ps[0] for ps in p]
+                sur = [ps[1] for ps in p]
+                print("{}\t{}\t{}".format(v, " ".join(par), " ".join(sur)))
