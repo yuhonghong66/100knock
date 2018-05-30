@@ -3,5 +3,7 @@ __pycache__/
 data/
 !data/.gitkeep
 
-2018/tanaka/data/
-!2018/tanaka/data/.gitkeep
+2018/tanaka/result/
+
+
+
