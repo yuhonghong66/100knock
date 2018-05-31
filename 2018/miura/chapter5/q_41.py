@@ -6,6 +6,9 @@ class Chunk:
         self.dst = dst
         self.srcs = []
 
+    def __repr__(self):
+        return 'morphs:{} dst:{} srcs:{}'.format(self.morphs, self.dst, self.srcs)
+
     def add_morphs(self, morph):
         self.morphs.append(morph)
 
@@ -27,6 +30,31 @@ class Chunk:
         for morph in self.morphs:
             if morph.pos == '動詞': return True
         return False
+
+    #動詞のmorphリストを返す -> q_45
+    def verb_list(self):
+        return [morph for morph in self.morphs if morph.pos == '動詞']
+
+    #助詞のmorphリストを返す -> q_45
+    def particle_list(self):
+        return [morph for morph in self.morphs if morph.pos == '助詞']
+
+    #サ変接続名詞+を を含む場合、サ変接続名詞を返す -> q_47
+    def sahen_wo(self):
+        for i,morph in enumerate(self.morphs):
+            if i >= len(self.morphs)-1: break
+            if morph.pos1 == 'サ変接続' and self.morphs[i+1].pos == '助詞' and self.morphs[i+1].base == 'を': return morph
+        return None
+
+    #名詞句はcharに置き換えた表層形を返す -> q_49
+    def noun_replace(self, char):
+        result = ''
+        for morph in self.morphs:
+            result += char if morph.pos == '名詞' else morph.surface
+        result = re.sub(r'[、。「」]', '', result)
+        #"XXXは" -> "Xは"
+        result = re.sub(char+'+', char, result)
+        return result
 
 allsentence = []
 chunks = []

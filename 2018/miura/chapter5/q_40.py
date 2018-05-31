@@ -7,9 +7,8 @@ class Morph:
         self.pos = morphmap['pos']
         self.pos1 = morphmap['pos1']
 
-    #表示用
-    def show(self):
-        return ' '.join([self.surface, self.base, self.pos, self.pos1])
+    def __repr__(self):
+        return '{{surface:{} base:{} pos:{} pos1:{}}}'.format(self.surface, self.base, self.pos, self.pos1)
 
 def makemorphmap(string):
     words = re.split(r'[,\t]', string)
@@ -29,4 +28,4 @@ if __name__ == '__main__':
             else:
                 sentence.append(Morph(makemorphmap(line)))
 
-    for w in allsentence[2]: print(w.show())
+    for w in allsentence[2]: print(w)

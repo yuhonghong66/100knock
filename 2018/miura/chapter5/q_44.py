@@ -10,7 +10,7 @@ cabocha = CaboCha.Parser()
 lattice = cabocha.parse(s).toString(CaboCha.FORMAT_LATTICE)
 #print(lattice)
 
-#q_40.py の Chunkはリッチすぎるので簡単なのつくる
+#q_41.py の Chunkはリッチすぎるので簡単なのつくる
 class Chunk:
     def __init__(self, dst, surface):
         self.dst = dst
@@ -31,12 +31,6 @@ for line in lattice.split('\n'):
         now_chunk = {'surface':'', 'dst':int(line.split(' ')[2][:-1])}
     else:
         now_chunk['surface'] += re.split(r'[,\t]', line)[0]
-
-'''
-for chunks in allsentence:
-    for chunk in chunks:
-        print('{} -> {}'.format(chunk.surface, chunks[chunk.dst].surface if chunk.dst != -1 else 'x'))
-'''
 
 #有効グラフをつくる
 G = Digraph(format='png')
