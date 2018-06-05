@@ -5,4 +5,4 @@ from stemming.porter2 import stem
 
 if __name__ == '__main__':
     for line in sys.stdin:
-        print(stem(line.strip()))
+        print(line.strip(), stem(line.strip()), '\t')
