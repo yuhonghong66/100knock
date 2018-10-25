@@ -19,3 +19,5 @@ if __name__ == '__main__':
     else:
         for key in sys.argv[1:]:
             print("{} => {}".format(key, my_db.get(key.encode("utf-8")).decode("utf-8")))
+
+    my_db.close()
